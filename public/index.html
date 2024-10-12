@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Facturas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <!-- Contenedor para los botones de modo día/noche e idioma -->
+        <div class="settings-container">
+            <button id="toggle-theme" class="settings-button">🌞</button>
+            <button id="toggle-lang" class="settings-button">🇪🇸</button>
+        </div>
+
+        <h1>Generador de Facturas</h1>
+
+        <form id="invoice-form">
+            <h2>Detalles del Cliente</h2>
+            <div>
+                <label for="client-name">Nombre del Cliente</label>
+                <input type="text" id="client-name" placeholder="Nombre completo" required>
+            </div>
+            <div>
+                <label for="client-nif">NIF/CIF del Cliente</label>
+                <input type="text" id="client-nif" placeholder="NIF/CIF" required>
+            </div>
+            <div>
+                <label for="client-address">Dirección del Cliente</label>
+                <input type="text" id="client-address" placeholder="Dirección" required>
+            </div>
+            <div>
+                <label for="client-email">Correo Electrónico</label>
+                <input type="email" id="client-email" placeholder="Correo electrónico" required>
+            </div>
+
+            <h2>Detalles del Emisor</h2>
+            <div>
+                <label for="company-name">Nombre de la Empresa</label>
+                <input type="text" id="company-name" placeholder="Nombre de la empresa" required>
+            </div>
+            <div>
+                <label for="company-nif">NIF/CIF de la Empresa</label>
+                <input type="text" id="company-nif" placeholder="NIF/CIF" required>
+            </div>
+            <div>
+                <label for="company-address">Dirección de la Empresa</label>
+                <input type="text" id="company-address" placeholder="Dirección de la empresa" required>
+            </div>
+            <div>
+                <label for="company-email">Correo Electrónico del Emisor</label>
+                <input type="email" id="company-email" placeholder="Correo electrónico del emisor" required>
+            </div>
+
+            <h2>Artículos</h2>
+            <div id="items">
+                <div class="item">
+                    <input type="text" class="item-name" placeholder="Descripción del artículo" required>
+                    <input type="number" class="item-quantity" placeholder="Cantidad" required>
+                    <input type="number" class="item-price" placeholder="Precio por unidad" required>
+                </div>
+            </div>
+            <button type="button" id="add-item">Añadir Artículo</button>
+
+            <h2>Lista de artículos</h2>
+            <div id="item-list"></div>
+
+            <h3>Total: <span id="total-amount">0.00</span> €</h3>
+
+            <div class="buttons-container">
+                <button type="button" id="generate-pdf">Generar Factura</button>
+                <button type="button" id="send-email">Enviar por Correo</button>
+            </div>
+        </form>
+
+        <div id="invoice-preview"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

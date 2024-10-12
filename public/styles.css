@@ -1,0 +1,189 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9; /* Color claro para el modo día */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    transition: background-color 0.3s ease; /* Suave transición entre modos */
+}
+
+body.dark-mode {
+    background-color: #222; /* Color oscuro para el modo noche */
+    color: #f4f4f9; /* Texto claro para el modo noche */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    transition: background-color 0.3s ease; /* Suave transición */
+}
+
+body.dark-mode .container {
+    background-color: #333; /* Fondo oscuro para el contenedor en modo noche */
+}
+
+/* Botones de modo día/noche y cambio de idioma */
+.settings-container {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    justify-content: flex-start; /* Alinea los botones uno al lado del otro */
+    margin-bottom: 20px; /* Espacio debajo de los botones */
+}
+
+.settings-button {
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px; /* Tamaño adecuado para los emojis */
+    width: 50px; /* Tamaño fijo */
+    height: 50px; /* Tamaño fijo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.settings-button:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode .settings-button {
+    background-color: #444;
+}
+
+body.dark-mode .settings-button:hover {
+    background-color: #888;
+}
+
+/* Encabezados */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+body.dark-mode h1 {
+    color: #fff;
+}
+
+h2, h3 {
+    margin-top: 20px;
+    color: #007BFF;
+}
+
+body.dark-mode h2, body.dark-mode h3 {
+    color: #66b2ff;
+}
+
+/* Inputs y etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+body.dark-mode label {
+    color: #ddd;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode input {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+/* Estilos de los artículos */
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .item-row {
+    background-color: #444;
+    border: 1px solid #666;
+}
+
+/* Botón "X" para eliminar artículo */
+.delete-item {
+    border: none;
+    background: none;
+    color: red;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    line-height: 1; /* Asegura que el botón tenga el tamaño del emoji */
+}
+
+/* Botones de acción (Añadir artículo, Generar factura, Enviar por correo) */
+.buttons-container button,
+#add-item {
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.buttons-container button:hover,
+#add-item:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode .buttons-container button,
+body.dark-mode #add-item {
+    background-color: #444;
+}
+
+body.dark-mode .buttons-container button:hover,
+body.dark-mode #add-item:hover {
+    background-color: #888;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .buttons-container button,
+    #add-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
